@@ -92,15 +92,15 @@ Frontend/
 
 The application is configured to connect to your RAG backend server:
 
-- **Upload API**: `http://localhost:8000/upload`
-- **Chat API**: `http://localhost:8000/tools/rag`
+- **Upload API**: `${NEXT_PUBLIC_API_URL}/upload` (Default: `https://eebc-backend.onrender.com/upload`)
+- **Chat API**: `${NEXT_PUBLIC_API_URL}/tools/rag` (Default: `https://eebc-backend.onrender.com/tools/rag`)
 
 ### API Endpoints
 
 #### Upload Endpoint
 
 ```typescript
-POST http://localhost:8000/upload
+POST ${NEXT_PUBLIC_API_URL}/upload
 Content-Type: multipart/form-data
 
 {
@@ -111,7 +111,7 @@ Content-Type: multipart/form-data
 #### Chat Endpoint
 
 ```typescript
-POST http://localhost:8000/tools/rag
+POST ${NEXT_PUBLIC_API_URL}/tools/rag
 Content-Type: application/json
 
 {

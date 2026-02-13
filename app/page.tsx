@@ -147,7 +147,8 @@ export default function RAGFrontend() {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("http://localhost:8000/upload", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -216,7 +217,8 @@ export default function RAGFrontend() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8000/tools/rag", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/tools/rag`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
